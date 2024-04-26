@@ -11,25 +11,19 @@ function Component3() {
 }
 
 type Props = {
-  isAdmin: boolean;
-  isUser: boolean;
-  isGuest: boolean;
+  condition: 'Admin' | 'User' | 'Guest';
 };
 
 /**
  * 条件分岐が多い場合はデータの持ち方を工夫しましょう。
  * @returns
  */
-export default function Page({ isAdmin, isUser, isGuest }: Props) {
-  if (isAdmin) {
-    return <Component1 />;
-  }
+export default function Page({ condition }: Props) {
+  const conditionPairs = {
+    Admin: <Component1 />,
+    User: <Component2 />,
+    Guest: <Component3 />,
+  };
 
-  if (isUser) {
-    return <Component2 />;
-  }
-
-  if (isGuest) {
-    return <Component3 />;
-  }
+  return conditionPairs[condition];
 }
