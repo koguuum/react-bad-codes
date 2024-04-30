@@ -28,10 +28,12 @@ type Props = {
  */
 export default function Page({ condition }: Props) {
   const conditionPairs = {
-    [CONDITIONS.ADMIN]: <Component1 />,
-    [CONDITIONS.USER]: <Component2 />,
-    [CONDITIONS.GUEST]: <Component3 />,
+    [CONDITIONS.ADMIN]: Component1,
+    [CONDITIONS.USER]: Component2,
+    [CONDITIONS.GUEST]: Component3,
   };
+  
+  const Component = conditionPairs[condition]
+  return <Component />;
 
-  return conditionPairs[condition];
 }
