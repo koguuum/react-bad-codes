@@ -16,7 +16,7 @@ const CONDITIONS = {
   GUEST: 'Guest',
 };
 
-type Condition = typeof CONDITIONS[keyof typeof CONDITIONS];
+type Condition = keyof typeof CONDITIONS;
 
 type Props = {
   condition: Condition;
@@ -32,7 +32,7 @@ export default function Page({ condition }: Props) {
     [CONDITIONS.USER]: Component2,
     [CONDITIONS.GUEST]: Component3,
   };
-  
+
   const Component = conditionPairs[condition]
   return <Component />;
 
