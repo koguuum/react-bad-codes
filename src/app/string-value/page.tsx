@@ -7,9 +7,5 @@ function Component({ name }: { name: string }) {
  * @returns
  */
 export default function Page() {
-  return (
-    <>
-      <Component name={'山田太郎'} />
-    </>
-  );
+  return <Component name='山田太郎' />;
 }

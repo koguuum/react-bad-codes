@@ -10,8 +10,16 @@ function Component3() {
   return <>コンポーネント3</>;
 }
 
+const CONDITIONS = {
+  ADMIN: 'Admin',
+  USER: 'User',
+  GUEST: 'Guest',
+};
+
+type Condition = keyof typeof CONDITIONS;
+
 type Props = {
-  condition: string;
+  condition: Condition;
 };
 
 /**
@@ -19,12 +27,13 @@ type Props = {
  * @returns
  */
 export default function Page({ condition }: Props) {
-  switch (condition) {
-    case 'Admin':
-      return <Component1 />;
-    case 'User':
-      return <Component2 />;
-    case 'Guest':
-      return <Component3 />;
-  }
+  const conditionPairs = {
+    [CONDITIONS.ADMIN]: Component1,
+    [CONDITIONS.USER]: Component2,
+    [CONDITIONS.GUEST]: Component3,
+  };
+
+  const Component = conditionPairs[condition]
+  return <Component />;
+
 }

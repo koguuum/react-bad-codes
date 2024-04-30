@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function ChildComponent({ name }: { name: string }) {
   console.log('ChildComponent render: ', name);
   return <p>My name is {name}</p>;
 }
+
+export const MemoChildComponent = React.memo(ChildComponent);
 
 /**
  * メモ化して不要なレンダリングを抑えましょう。
@@ -23,7 +25,7 @@ export default function Page() {
     <div>
       <p>count: {count}</p>
       <button onClick={handleClick}>+1ボタン</button>
-      <ChildComponent name={name} />
+      <MemoChildComponent name={name} />
     </div>
   );
 }

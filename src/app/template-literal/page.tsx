@@ -1,5 +1,5 @@
 function Component({ name }: { name: string }) {
-  const message = 'Hello ' + name + '!!';
+  const message = `Hello ${name}!!`;
   return <>{message}</>;
 }
 
@@ -8,9 +8,5 @@ function Component({ name }: { name: string }) {
  * @returns
  */
 export default function Page() {
-  return (
-    <>
-      <Component name={'山田太郎'} />
-    </>
-  );
+  return <Component name={'山田太郎'} />;
 }

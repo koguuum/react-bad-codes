@@ -6,9 +6,5 @@ function Component() {
 }
 
 export default function Page() {
-  return (
-    <>
-      <Component></Component>
-    </>
-  );
+  return <Component/>;
 }

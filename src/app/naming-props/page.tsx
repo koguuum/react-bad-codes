@@ -2,23 +2,19 @@
  * propsの命名規則を守りましょう。
  */
 type Props = {
-  UserName: string;
-  phone_number: number;
+  userName: string;
+  phoneNumber: number;
 };
 
-function Component({ UserName, phone_number }: Props) {
+function Component({ userName, phoneNumber }: Props) {
   return (
     <>
-      <div>{UserName}</div>
-      <div>{phone_number}</div>
+      <div>{userName}</div>
+      <div>{phoneNumber}</div>
     </>
   );
 }
 
 export default function Page() {
-  return (
-    <>
-      <Component UserName="John" phone_number={1234567890} />
-    </>
-  );
+  return <Component userName="John" phoneNumber={1234567890} />;
 }

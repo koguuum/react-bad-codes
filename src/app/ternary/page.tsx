@@ -15,9 +15,5 @@ type Props = {
  * @returns
  */
 export default function Page({ condition }: Props) {
-  if (condition) {
-    return <Component1 />;
-  } else {
-    return <Component2 />;
-  }
+  return condition ? <Component1 /> : <Component2 />;
 }

@@ -8,12 +8,12 @@ type Props = {
  * 分割代入を使ってシンプルにしましょう。
  * @returns
  */
-export default function Page(props: Props) {
+export default function Page({name, age, phone}: Props) {
   return (
     <>
-      <p>名前: {props.name}</p>
-      <p>年齢: {props.age}</p>
-      <p>電話番号: {props.phone}</p>
+      <p>名前: {name}</p>
+      <p>年齢: {age}</p>
+      <p>電話番号: {phone}</p>
     </>
   );
 }
